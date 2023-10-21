@@ -30,9 +30,11 @@ function inyectionJs(route){
     return script;
 }
 
-function routUrl(ruta){// muestra la ruta url
-    history.pushState({page:ruta+".html"},"index","TP2/"+ruta);
+function routUrl(ruta){
+    let currentURL = window.location.href;
     updateBreadcrumbs(ruta);
+    ruta = currentURL.includes("TP2") ? "/"+ruta : "TP2/"+ruta;
+    history.pushState({page:ruta+".html"},"index",ruta);
 }
 
 function changeRoute(ruta){
