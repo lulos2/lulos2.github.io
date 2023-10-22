@@ -20,7 +20,7 @@ async function fetchFile(ruta){
 
 function inyectionJs(route){
     let script = document.createElement("script");
-    script.src = "js/"+route+".js";
+    script.src = "TP2/js/"+route+".js";
     script.async = true;
     return script;
 }
@@ -28,12 +28,11 @@ function inyectionJs(route){
 function routUrl(ruta){
     let currentURL = window.location.href;
     updateBreadcrumbs(ruta);
-    ruta = currentURL.includes("/TP2/") ? "/" + ruta : "/TP2/" + ruta;
+    //ruta = currentURL.includes("/TP2/") ? "/" + ruta : "/TP2/" + ruta;
     history.pushState({page: ruta + ".html"}, "index", ruta);
 }
 
 function changeRoute(ruta){
-    ruta = ruta.replace("TP2/","");
     fetchFile(ruta);
     routUrl(ruta);
 }
