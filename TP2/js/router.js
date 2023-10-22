@@ -17,7 +17,7 @@ function changeRoute(ruta){
 }
 
 async function fetchFile(ruta){
-    let rute = window.location.href.includes("TP2") ? "/html"+ruta+".html" : "TP2/html/"+ruta+".html";
+    let rute = window.location.href.includes("TP2") ? "/html/"+ruta+".html" : "TP2/html/"+ruta+".html";
     let promise = await fetch(rute);
     let contenedor = document.getElementById("index");
     contenedor.innerHTML = await promise.text();
