@@ -10,8 +10,15 @@ document.getElementById("loginButton").addEventListener("click",()=>{
     routUrl("logIn");
 });
 
-async function fetchFile(ruta){ 
-    let promise = await fetch("TP2/html/"+ruta+".html");
+
+function changeRoute(ruta){
+    fetchFile(ruta);
+    routUrl(ruta);
+}
+
+async function fetchFile(ruta){
+    let rute = window.location.href.includes("TP2") ? "/html"+ruta+".html" : "TP2/html/"+ruta+".html";
+    let promise = await fetch(rute);
     let contenedor = document.getElementById("index");
     contenedor.innerHTML = await promise.text();
     contenedor.append(inyectionJs(ruta));
@@ -30,35 +37,11 @@ function routUrl(ruta){
     history.pushState({page:ruta+".html"},"index",ruta);
 }
 
-function changeRoute(ruta){
-    fetchFile(ruta);
-    routUrl(ruta);
-}
-
 window.addEventListener('popstate', function(){
     changeRoute(history.state.page);
     updateBreadcrumbs(history.state.page);
 
 });
-
-document.querySelector('.hamburger-button').addEventListener('click', deployMenu);
-
-function deployMenu() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-  
-window.onclick = function(event) {
-  if (!event.target.matches('.hamburger-button')) {
-    let dropdowns = document.getElementsByClassName("dropdown-content");
-    let i;
-    for (i = 0; i < dropdowns.length; i++) {
-      let openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 
 function updateBreadcrumbs(actualRoute) {
     let breadCrumb = document.getElementById("breadcrumbs");
@@ -76,4 +59,23 @@ function updateBreadcrumbs(actualRoute) {
             breadCrumb.removeChild(breadcrumbItems[i]);
         }
     }
+}
+
+document.querySelector('.hamburger-button').addEventListener('click', deployMenu);
+
+function deployMenu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.hamburger-button')) {
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
 }
