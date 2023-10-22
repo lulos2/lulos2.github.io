@@ -12,7 +12,7 @@ document.getElementById("loginButton").addEventListener("click",()=>{
 
 
 async function fetchFile(ruta){ 
-    let promise = await fetch("html/"+ruta+".html");
+    let promise = await fetch("TP2/html/"+ruta+".html");
     let contenedor = document.getElementById("index");
     contenedor.innerHTML = await promise.text();
     contenedor.append(inyectionJs(ruta));
