@@ -28,12 +28,12 @@ function inyectionJs(route){
 function routUrl(ruta){
     let currentURL = window.location.href;
     updateBreadcrumbs(ruta);
-    ruta = currentURL.includes("TP2") ? "/"+ruta : "TP2/"+ruta;
-    history.pushState({page:ruta+".html"},"index",ruta);
+    ruta = currentURL.includes("/TP2/") ? "/" + ruta : "/TP2/" + ruta;
+    history.pushState({page: ruta + ".html"}, "index", ruta);
 }
 
 function changeRoute(ruta){
-    ruta = ruta.replace("TP2","");
+    ruta = ruta.replace("TP2/","");
     fetchFile(ruta);
     routUrl(ruta);
 }
