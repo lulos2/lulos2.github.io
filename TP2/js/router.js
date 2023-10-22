@@ -16,17 +16,18 @@ function changeRoute(ruta){
     routUrl(ruta);
 }
 
-async function fetchFile(ruta){
-    let rute = window.location.href.includes("TP2") ? "/html/"+ruta+".html" : "TP2/html/"+ruta+".html";
-    let promise = await fetch(rute);
-    let contenedor = document.getElementById("index");
-    contenedor.innerHTML = await promise.text();
-    contenedor.append(inyectionJs(ruta));
+async function fetchFile(route) {
+    let url = window.location.href.includes("/TP2/") ? "html/" + route + ".html" : "/TP2/html/" + route + ".html";
+  console.log(window.location.href);
+    let promise = await fetch(url);
+    let container = document.getElementById("index");
+    container.innerHTML = await promise.text();
+    container.append(injectionJs(route));
 }
 
-function inyectionJs(route){
+function injectionJs(route){
     let script = document.createElement("script");
-    script.src = "TP2/js/"+route+".js";
+    script.src = "js/"+route+".js";
     script.async = true;
     return script;
 }
@@ -79,3 +80,4 @@ window.onclick = function(event) {
     }
   }
 }
+console.log('s');
