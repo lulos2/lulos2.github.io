@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded',function(){initialize()})
+window.addEventListener('DOMContentLoaded',function(){changeRoute("logIn")})
 
 document.getElementById("logo").addEventListener("click",()=>{
     fetchFile("home");
@@ -10,16 +10,11 @@ document.getElementById("loginButton").addEventListener("click",()=>{
     routUrl("logIn");
 });
 
-function initialize(){
-    fetchFile("logIn");
-    routUrl("logIn"); 
-}
 
 async function fetchFile(ruta){ 
     let promise = await fetch("html/"+ruta+".html");
     let contenedor = document.getElementById("index");
-    let contenido  = await promise.text();
-    contenedor.innerHTML = contenido;
+    contenedor.innerHTML = await promise.text();
     contenedor.append(inyectionJs(ruta));
 }
 
@@ -38,6 +33,7 @@ function routUrl(ruta){
 }
 
 function changeRoute(ruta){
+    ruta = ruta.replace("TP2","");
     fetchFile(ruta);
     routUrl(ruta);
 }
@@ -56,10 +52,10 @@ function deployMenu() {
   
 window.onclick = function(event) {
   if (!event.target.matches('.hamburger-button')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
     for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
+      let openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
       }
