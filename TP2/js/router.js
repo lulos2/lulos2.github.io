@@ -11,7 +11,7 @@ document.getElementById("loginButton").addEventListener("click",()=>{
 });
 
 async function fetchFile(ruta){ 
-    let promise = await fetch("html/"+ruta+".html");
+    let promise = await fetch("TP2/html/"+ruta+".html");
     let contenedor = document.getElementById("index");
     contenedor.innerHTML = await promise.text();
     contenedor.append(inyectionJs(ruta));
@@ -27,7 +27,6 @@ function inyectionJs(route){
 function routUrl(ruta){
     let currentURL = window.location.href;
     updateBreadcrumbs(ruta);
-    ruta = currentURL.includes("TP2") ? "/"+ruta : "TP2/"+ruta;
     history.pushState({page:ruta+".html"},"index",ruta);
 }
 
