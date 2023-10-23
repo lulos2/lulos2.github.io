@@ -11,25 +11,41 @@
         </div>
         <div class="right-column">
             <div class="description">
-                <h1>Título de la Descripción</h1>
-                <p>Esta es una descripción detallada del contenido. Puedes agregar cualquier texto o información relevante aquí.</p>
+                <h1>4 En linea</h1>
+                <p>Cuatro en Línea es un juego de estrategia para dos jugadores que se juega en un tablero vertical con 7 columnas y 6 filas. Los jugadores se turnan para soltar fichas en las columnas, tratando de conectar cuatro de sus fichas de forma horizontal, vertical o diagonal antes que su oponente. Es un juego rápido y desafiante que requiere planificación y habilidad para ganar.  </p>
             </div>
-            <button id="playDemo" class="button-primary">Play Demo</button>
+            <div class="pdp-info-container">
+                <button id="playDemo" class="button-primary">Play Demo</button>
+                <div class="price-container">
+                    <div class="card-price">$4.99</div>
+                    <button class="addCart"><i class="fa-solid fa-cart-plus fa-2x"></i></button>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="how-to-play">
+        <h3>How to play</h3>
+        <p>Los turnos se suceden hasta que uno de los jugadores consiga colocar cuatro de sus fichas en línea
+            – horizontal, vertical o diagonal. ¡El primer jugador que consiga 4 en línea gana! El ganador de la
+            partida anterior desliza la varilla de sujeción para soltar todas las fichas.</p>
+    </div>
+
+
     <div class="comments-container">
         <h2>Comentarios</h2>
-        <form id="comment-form">
-            <img src="../TP2/icons/user.svg" alt="">
-            <textarea id="comment" placeholder="Agrega un comentario" rows="3" required></textarea>
-            <button type="button" id="add-comment-button">comentar</button>
+        <form id="comment-form" class="comment-form">
+            <div>
+                <img src="../TP2/icons/user.svg" alt="">
+                <input type="text" id="comment" placeholder="Agrega un comentario" rows="3" required></input>
+            </div>
+            <button type="button" id="add-comment-button" class="button-primary">comentar</button>
         </form>
 
         <div id="comment-list" class="comment-list">
             <div class="comment">
                 <img src="../TP2/images/games/crash.jpg" alt="Usuario 1">
                 <div class="comment-content">
-                    <h3>Usuario 1</h3>
+                    <h4>@Krymer</h4>
                     <p>Este es el primer comentario.</p>
                 </div>
                 <div class="comment-date">hace 20min</div>
@@ -37,7 +53,7 @@
             <div class="comment">
                 <img src="../TP2/images/games/crash.jpg" alt="Usuario 2">
                 <div class="comment-content">
-                    <h3>Usuario 2</h3>
+                    <h4>@Lulosaurus</h4>
                     <p>Este es el segundo comentario.</p>
                 </div>
                 <div class="comment-date">hace 8h</div>

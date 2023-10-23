@@ -47,6 +47,7 @@
 }
 
 .description {
+    color: var(--white);
     padding: 20px; 
     border-radius: 5px;
 }
@@ -56,26 +57,44 @@
     justify-content: space-between;
 }
 
-#comment-form{
-    border-bottom: solid 2px var(--black);
+.how-to-play {
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+    color: var(--white);
+    width: 1200px;
+    height: fit-content;
+    margin-top: 50px;
+    opacity: .95;
+}
+.how-to-play  * {
+    padding: 0 15px;
+}
+
+.how-to-play p {
+    height: fit-content;
 }
 
 .comments-container {
-    width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 1200px;
+    margin-top: 50px;
     background-color: var(--secondaryColor);
     border-radius: 5px;
     overflow: auto;
+    color: var(--white);
+    opacity: .95;
+}
+.comments-container h2{
+    padding-left: 15px;
 }
 
 .comment-list {
     padding: 10px;
-    margin-top: 10px;
 }
+
 
 .comment {
     display: flex;
+    align-items: center;
     background-color: transparent;
     padding: 10px;
     margin: 10px 0;
@@ -83,8 +102,8 @@
 }
 
 .comment img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -102,6 +121,62 @@
 }
 
 .comment-date {
-    color: var(--secondaryColorDark2);
+    color: var(--secondaryColorLight2);
     font-size: 0.8em;
+}
+
+.comment-form{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.comment-form:focus-visible{
+    outline: 0;
+}
+
+.comment-form div{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.comment-form div img {
+    width: 3%;
+}
+.comment-form div input {
+    width: 90%;
+    border-bottom: solid   var(--secondaryColorLight1);
+    background-color: inherit;
+}
+
+.comment-form div input:focus{
+    transition: 0.35s;
+    width: 90%;
+    border-bottom: solid   var(--white);
+    background-color: inherit;
+    outline: 0;
+}
+
+
+.comment-form button{
+    scale: 0.6;
+}
+
+.price-container .card-price {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.pdp-info-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price-container{
+    display: flex;
+    justify-content: flex-end;
+    height: fit-content;
 }

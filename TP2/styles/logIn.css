@@ -100,4 +100,8 @@
     height: 164px;
     align-items: center;
 }
+.captcha{
+    margin-top: 20px;
+    text-align: center;
+}
 
