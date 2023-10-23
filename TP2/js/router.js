@@ -10,7 +10,6 @@ document.getElementById("loginButton").addEventListener("click",()=>{
     routUrl("logIn");
 });
 
-
 function changeRoute(ruta){
     fetchFile(ruta);
     routUrl(ruta);
@@ -18,7 +17,6 @@ function changeRoute(ruta){
 
 async function fetchFile(route) {
     let url = window.location.href.includes("/TP2/") ? "html/" + route + ".html" : "/TP2/html/" + route + ".html";
-  console.log(window.location.href);
     let promise = await fetch(url);
     let container = document.getElementById("index");
     container.innerHTML = await promise.text();
@@ -80,4 +78,3 @@ window.onclick = function(event) {
     }
   }
 }
-console.log('s');
