@@ -46,7 +46,6 @@
 
 .userForm div {
     padding-bottom: 10px; 
-    height: 60px;  
 }
 
 .userForm input {
@@ -73,7 +72,32 @@
     
 }
 
-.loginForm div{
+.login-button-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.network-login{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
     height: fit-content;
+    padding-top: 10px;
+}
+
+.login-button-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.login-button-container .login-button-wrapper{
+    height: 123px;
+}
+
+.register-wrapper{
+    height: 164px;
+    align-items: center;
 }
 

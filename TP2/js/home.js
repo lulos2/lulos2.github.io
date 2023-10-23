@@ -19,3 +19,24 @@ document.getElementById("arrow-right").addEventListener('click',(e)=>{
     carousel.style.transform = `translateX(-${Math.min(Number(carousel.dataset.scroll) + 400,maxX)}px)`;
     carousel.dataset.scroll = Math.min(Number(carousel.dataset.scroll) + 400,maxX)
 })
+document.querySelector('body').prepend(createDialog());
+
+function createDialog(){
+    let modal = document.createElement('dialog');
+    modal.className = 'modal';
+    let loader = document.createElement('div');
+    loader.className = 'loader';
+    modal.append(loader);
+    return modal
+}
+
+if (typeof dialog === 'undefined') {
+    var dialog = document.querySelector("dialog");
+}
+
+dialog.showModal();
+
+setTimeout(function() {
+    dialog.close();
+    document.querySelector('.modal').style.display = 'none';
+}, 5000);
