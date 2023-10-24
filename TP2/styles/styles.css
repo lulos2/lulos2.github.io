@@ -95,7 +95,7 @@ input {
     border: transparent 1px ;
     color: var(--white);
     text-align: center;
-    font-family: Nunito;
+    font-family: 'Nunito', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
