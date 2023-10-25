@@ -1,8 +1,7 @@
-window.addEventListener('DOMContentLoaded',function(){changeRoute("logIn")})
+window.addEventListener('DOMContentLoaded',function(){changeRoute("gamePage")})
 
 document.getElementById("logo").addEventListener("click",()=>{
-    fetchFile("home");
-    routUrl("home");
+    changeRoute("home")
 });
 
 document.getElementById("loginButton").addEventListener("click",()=>{
