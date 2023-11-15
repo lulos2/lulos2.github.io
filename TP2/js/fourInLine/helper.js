@@ -1,4 +1,4 @@
-export function clearCanvas(ctx,color){
+  export function clearCanvas(ctx,color){
     ctx.fillStyle = color;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 }

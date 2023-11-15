@@ -16,7 +16,7 @@ export let isMouseDown = false;
 export let canvasWidth = c.width;
 export let canvasHeight = c.height;
 export let imgFondo= new Image();
-imgFondo.src = "../TP2/images/4inLine/fondo.jpg";
+imgFondo.src = "images/4inLine/fondo.jpg";
 
 imgFondo.onload = function (){
     clearCanvasImg(ctx,imgFondo);

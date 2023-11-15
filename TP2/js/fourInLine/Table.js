@@ -1,4 +1,7 @@
 import {clearCanvasImg} from './helper.js';
+import {Ficha} from './Ficha.js'
+import {Rect} from './Rect.js';
+import {FigCompuesta} from './FiguraCompuesta.js';
 import {
   ctx,
   canvasWidth,
@@ -159,45 +162,40 @@ crearTablero();
         let canvas = document.querySelector('#myCanvas');
 
         if(modoDeJuego == 4){
-            dimY = 6;
-            dimX = 7
-            cantWin = 4
-            inicX = 290
-            minutos = 4;
+          dimY = 6;
+          dimX = 7
+          cantWin = 4
+          inicX = 290
+          minutos = 4;
         }
 
         else if (modoDeJuego == 6){
-            dimY = 7;
-            dimX = 8
-            cantWin = 6
-            canvas.height = 600; 
-            canvasHeight = canvas.height;
-            inicX = 260;
-            minutos = 6;
+          dimY = 7;
+          dimX = 8
+          cantWin = 6
+          canvas.height = 600; 
+          inicX = 260;
+          minutos = 6;
         }
 
         else if (modoDeJuego == 7){
-            dimY = 8;
-            dimX = 9;
-            cantWin = 7
-            canvas.width = 1100
-            canvas.height = 700;
-            canvasWidth = canvas.width
-            canvasHeight = canvas.height
-            inicX = 290;
-            minutos = 7;
+          dimY = 8;
+          dimX = 9;
+          cantWin = 7
+          canvas.width = 1100
+          canvas.height = 700;
+          inicX = 290;
+          minutos = 7;
         }
 
         else if (modoDeJuego == 8){
-            dimY = 9;
-            dimX = 10
-            cantWin = 8
-            canvas.width = 1100
-            canvas.height = 700; 
-            canvasWidth = canvas.width
-            canvasHeight = canvas.height
-            inicX = 260;
-            minutos = 8;
+          dimY = 9;
+          dimX = 10
+          cantWin = 8
+          canvas.width = 1100
+          canvas.height = 700; 
+          inicX = 260;
+          minutos = 8;
         }
 
         inicY = 80;
@@ -304,7 +302,7 @@ function drawFigures(){
     let posY = Y 
     let radio = tamFicha;
     if(fichaImg1 == null){
-        fichaImg1= "img/ficha_roja.png";
+        fichaImg1= "images/4inLine//ficha_roja.png";
     }
     let ficha = new Ficha(posX,posY,color,radio,ctx,fichaImg1); //Creamos el objeto ficha con sus respectivos parametros y lo retornamos
     return ficha;
@@ -317,7 +315,7 @@ function drawFigures(){
     let posY = Y 
     let radio = tamFicha;
     if(fichaImg2 == null){
-      fichaImg2= "img/ficha_amarilla.png";
+      fichaImg2= "images/4inLine/ficha_amarilla.png";
     }
     let ficha = new Ficha(posX,posY,color,radio,ctx,fichaImg2);
     return ficha;
@@ -337,7 +335,7 @@ function drawFigures(){
         matrizJuego[i]=[];
         for(let j = 0; j < dimX; j++){
             let rect = new Rect(posX,posY,color,ctx,ancho,alto); //creamos el tablero
-            let dir = "img/ficha_blanca.png";
+            let dir = "images/4inLine/ficha_blanca.png";
             let circ = new Ficha(posX+(ancho/2),posY+(alto/2),fillCirc,(ancho/2)-10,ctx,dir); //creamos las falsas fichas para el tablero (posiciones en blanco)
             //guarda el estado de casillero, arranca en blanco
             let compuesto = new FigCompuesta(rect,circ); //para poder obtener la informacion del objeto se crea la clase!
@@ -356,7 +354,7 @@ function drawFigures(){
     let posY = inicY - tamFicha;
     let posX = inicX + (tabWidth/2);
     let radio = tamFicha;
-    let dir = "img/flecha.png";
+    let dir = "images/4inLine/flecha.png";
     for(let i = 0; i < dimX; i++){
       let circle = new Ficha(posX,posY,"black",radio,ctx,dir);
       bajadas[i] = circle;

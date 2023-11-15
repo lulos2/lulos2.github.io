@@ -1,4 +1,4 @@
-class FigCompuesta{
+export class FigCompuesta{
     constructor(fig1,fig2){
         this.fig1 = fig1;
         this.fig2 = fig2;
