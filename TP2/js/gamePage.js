@@ -1,22 +1,18 @@
-
-document.getElementById("canvasGame").addEventListener("click", (e)=>{
-    console.log(e);
-    const canvas = document.getElementById("canvasGame"); 
-    reac = canvas.getBoundingClientRect();
-    drawCircle(e.clientX-reac.left, e.clientY-reac.top);
-});
-
-
-
-
-
-function drawCircle(x,y){
-    const canvas = document.getElementById("canvasGame");
-    const ctx = canvas.getContext("2d");
-    let radius = 30;
-    ctx.beginPath();
-    ctx.arc(x, y, radius, 0, 2 * Math.PI);
-    ctx.stroke();
-    console.log(x,y);
+function injectionJs(route){
+    let script = document.createElement("script");
+    script.src = "js/fourInLine/"+route+".js";
+    script.async = true;
+    script.type = "module";
+    return script;
 }
-    
+
+
+let main = document.querySelector('.container');
+main.appendChild(injectionJs('Figure'));
+main.appendChild(injectionJs('Circle'));
+main.appendChild(injectionJs('helper'));
+main.appendChild(injectionJs('Ficha'));
+main.appendChild(injectionJs('juego'));
+main.appendChild(injectionJs('table'));
+main.appendChild(injectionJs('Rect'));
+main.appendChild(injectionJs('FiguraCompuesta'));
