@@ -302,7 +302,7 @@ function drawFigures(){
     let posY = Y 
     let radio = tamFicha;
     if(fichaImg1 == null){
-        fichaImg1= "images/4inLine//ficha_roja.png";
+        fichaImg1= "images/4inLine/fichasolider.jpeg";
     }
     let ficha = new Ficha(posX,posY,color,radio,ctx,fichaImg1); //Creamos el objeto ficha con sus respectivos parametros y lo retornamos
     return ficha;
@@ -315,7 +315,7 @@ function drawFigures(){
     let posY = Y 
     let radio = tamFicha;
     if(fichaImg2 == null){
-      fichaImg2= "images/4inLine/ficha_amarilla.png";
+      fichaImg2= "images/4inLine/alienGrande.jpeg";
     }
     let ficha = new Ficha(posX,posY,color,radio,ctx,fichaImg2);
     return ficha;
